@@ -6,13 +6,13 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-export default function MediaCard({src , amount , description , index}) {
+export default function MediaCard({src , amount , description , onClick}) {
   return (
 
     
 
 
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345 }} onClick={onClick}>
       <CardMedia
         sx={{ height: 140 }}
         image={src}

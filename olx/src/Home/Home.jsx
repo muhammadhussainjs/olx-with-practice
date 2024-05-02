@@ -27,6 +27,9 @@ const Home = () => {
     },
   ])
 
+  const [cardetail , setCardetail] = useState('')
+  
+
   const [cars, setCars] = useState([
     {
       image: car1,
@@ -45,10 +48,9 @@ const Home = () => {
     },
   ])
 
-  function gotodetail(index){
-    navigate('/productdetail' , {index})
-    console.log(index);
-
+  function gotoDetail(item) {
+   setCardetail(item)
+   navigate('productdetail' , {state: {cardetail: item}})
   }
   return (
     <>
@@ -62,7 +64,7 @@ const Home = () => {
       
       <div className='d-flex justify-content-evenly mt-4'>
         {phones.map((item, index) => {
-        return  <MediaCard key={index} src={item.image} amount={item.amount} description={item.description}  />
+        return  <MediaCard key={index} src={item.image} amount={item.price} description={item.description}  />
       
             
 
@@ -76,13 +78,10 @@ const Home = () => {
 
       <div className='d-flex justify-content-evenly mt-4 mb-3' >
         {cars.map((item, index) => {
-        return  <MediaCard key={index} src={item.image} price={item.price} description={item.description} onClick={() => gotodetail(index)} />
+        return  <MediaCard key={index} src={item.image} price={item.price} description={item.description} onClick={()=> gotoDetail(item)} />
+  }) }
 
-      
-            
-
-          
-      }) }
+  
       </div>
         
         </>
