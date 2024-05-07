@@ -17,12 +17,12 @@ const Home = () => {
     },
     {
       image: mobile,
-      price: 5000,
+      price: 10000,
       description: "This is the best mobile This is the best mobile This is the best mobile This is the best mobile This is the best mobile"
     },
     {
       image: mobile,
-      price: 5000,
+      price: 20000,
       description: "This is the best mobile This is the best mobile This is the best mobile This is the best mobile This is the best mobile"
     },
   ])
@@ -48,9 +48,13 @@ const Home = () => {
     },
   ])
 
-  function gotoDetail(item) {
+  function gotocarDetail(item) {
    setCardetail(item)
    navigate('productdetail' , {state: {cardetail: item}})
+  }
+  function gotophoneDetail(item) {
+   setCardetail(item)
+   navigate('pHONEdetail' , {state: {phonedetail: item}})
   }
   return (
     <>
@@ -64,7 +68,7 @@ const Home = () => {
       
       <div className='d-flex justify-content-evenly mt-4'>
         {phones.map((item, index) => {
-        return  <MediaCard key={index} src={item.image} amount={item.price} description={item.description}  />
+        return  <MediaCard key={index} src={item.image} amount={item.price} description={item.description} onClick={()=> gotophoneDetail(item)} />
       
             
 
@@ -78,7 +82,7 @@ const Home = () => {
 
       <div className='d-flex justify-content-evenly mt-4 mb-3' >
         {cars.map((item, index) => {
-        return  <MediaCard key={index} src={item.image} price={item.price} description={item.description} onClick={()=> gotoDetail(item)} />
+        return  <MediaCard key={index} src={item.image} price={item.price} description={item.description} onClick={()=> gotocarDetail(item)} />
   }) }
 
   

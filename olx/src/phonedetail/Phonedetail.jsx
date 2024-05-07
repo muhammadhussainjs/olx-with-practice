@@ -2,10 +2,10 @@ import React from 'react'
 import { useLocation } from 'react-router-dom'
 import MediaCard from '../components/Card';
 
-const Productdetail = () => {
+const Phonedetail = () => {
   const location = useLocation();
-  const carDetail = location.state?.cardetail;
-  console.log(carDetail);
+  const phoneDetail = location.state?.phonedetail;
+  console.log(phoneDetail);
 
 
   return (
@@ -13,7 +13,7 @@ const Productdetail = () => {
     <div>productdetail</div>
     <div className='d-flex justify-content-evenly mt-4'>
         
-           <MediaCard  src={carDetail.image} amount={carDetail.price} description={carDetail.description}  />
+           <MediaCard  src={phoneDetail.image} amount={phoneDetail.price} description={phoneDetail.description}  />
           
           
           
@@ -24,4 +24,4 @@ const Productdetail = () => {
   )
 }
 
-export default Productdetail
+export default Phonedetail
