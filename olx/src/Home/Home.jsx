@@ -68,7 +68,8 @@ const Home = () => {
       
       <div className='d-flex justify-content-evenly mt-4'>
         {phones.map((item, index) => {
-        return  <MediaCard key={index} src={item.image} amount={item.price} description={item.description} onClick={()=> gotophoneDetail(item)} />
+        return  <MediaCard key={index} src={item.image} amount={item.price} description={item.description} onClick={()=> gotophoneDetail(item)} showminus={false} showplus={false}
+         showone={false} />
       
             
 
@@ -82,7 +83,7 @@ const Home = () => {
 
       <div className='d-flex justify-content-evenly mt-4 mb-3' >
         {cars.map((item, index) => {
-        return  <MediaCard key={index} src={item.image} price={item.price} description={item.description} onClick={()=> gotocarDetail(item)} />
+        return  <MediaCard key={index} src={item.image} price={item.price} description={item.description} onClick={()=> gotocarDetail(item)} showminus={false} showplus={false} showone={false} />
   }) }
 
   

@@ -13,7 +13,7 @@ const Productdetail = () => {
     <div>productdetail</div>
     <div className='d-flex justify-content-evenly mt-4'>
         
-           <MediaCard  src={carDetail.image} amount={carDetail.price} description={carDetail.description}  />
+           <MediaCard  src={carDetail.image} amount={carDetail.price} description={carDetail.description} showbutton={false}  />
           
           
           
